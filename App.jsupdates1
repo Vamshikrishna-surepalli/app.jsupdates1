@@ -1,0 +1,20 @@
+import React,{ useState} from 'react';
+import NewStudent from './NewStudent';
+import StudentList from './StudentList';
+
+function App() {
+  const[createStudent,setCreateStudent]=useState(false)
+  const[showList,setShowList]=useState(false)
+  return (
+    <div className="App">
+      <button name="New Student" onClick={()=>{setCreateStudent(true) ;setShowList(false)}}>New Student</button>
+      <br/>
+      <button name="Student List" onClick={()=>{setShowList(true);setCreateStudent(false)}}>Student List</button>
+      {createStudent?<NewStudent/>:undefined}
+      {showList?<StudentList/>:undefined}
+    </div>
+  )
+  
+}
+
+export default App
